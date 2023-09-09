@@ -1,0 +1,290 @@
+﻿
+body{
+	
+	background-color:#D2CDCD;
+
+}
+
+p, a, h1, h2, h3, h4{
+
+	font-family:Verdana,Arial, sans-serif;
+	font-size:8pt;
+}
+
+.navigation{
+	
+	
+	
+	padding:5px;
+	background-color:#222121;
+	border-left:1px solid black; 
+	border-right:1px solid black; 
+	border-top:1px solid black; 
+	
+}
+
+.navigation a{
+
+	
+	color:#C9C9C9;
+	text-decoration:none;
+	margin-right:10px;
+	
+}
+
+.navigation a:hover{
+	
+	
+	color:white;
+
+}
+
+#container{
+
+	width:1200px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color:#D2CDCD;
+	box-shadow: 5px 5px 5px 3px #777;
+}
+
+
+
+#LevelEditorDiv{
+
+	z-index:0;
+	
+
+	border: 1px solid black;
+}
+
+#canvasdiv{
+	position:relative;
+	width:800px;
+	height:600px;
+	float:left;
+	left:0px;
+	top:0px;
+	
+	background-color:black;
+	
+
+}
+
+#Menu{
+
+	margin-left:800px;
+	height:596px;
+	background-color:#222121;
+	padding:2px;
+	
+}
+
+
+
+#Menu p{
+
+	display:inline;
+	margin:5px;
+	color:white;
+}
+
+#Menu h4{
+
+	display:block;
+	margin:5px;
+	color:white;
+}
+
+#Toolmenu{
+	
+	border:1px solid black;
+	margin:5px;
+	padding:3px;
+	
+
+}
+
+#Typemenu{
+	
+	border:1px solid black;
+	margin:5px;
+	padding:3px;
+}
+
+#Colorpicker{
+
+	border:1px solid black;
+	margin:5px;
+	padding:3px;
+
+}
+
+.colorPreview{
+	margin:5px;
+	
+	float:left;
+	height:20px;
+	width:20px;
+	background-color:rgb(0,255,0);
+
+}
+
+#SelectedObjectMenu{
+
+	border:1px solid black;
+	margin:5px;
+	padding:3px;
+}
+
+
+#SelectedObjectMenu  input{
+
+	
+	margin:5px;
+
+}
+
+
+#SelectedObjectMenu input[readonly="readonly"]{
+
+	background-color:#7f7f7f;
+	margin:5px;
+
+}
+
+#SaveLevelMenu{
+
+	border:1px solid black;
+	margin:5px;
+	padding:3px;
+
+}
+
+#SaveButton{
+	
+	margin:5px;
+}
+#DownloadLinkDiv{
+
+	padding-left:10px;
+}
+
+
+
+#PlatzierenButton{
+
+	background-color:lightgreen;
+	background: url('./buttons/platzieren.png');
+}
+
+#VerschiebenButton{
+
+	background-color:lightblue;
+	background: url('./buttons/verschieben.png');
+}
+
+#EntfernenButton{
+
+	background-color:#FF6363;
+	background: url('./buttons/entfernen.png');
+}
+
+
+#DeathzoneButton{
+
+	background:url('./buttons/DeathZoneIcon.png');
+}
+
+#PickupButton{
+
+	background:url('./buttons/PickupButton.png');
+	
+}
+
+#EndzoneButton{
+
+	background:url('./buttons/EndzoneButton.png');
+	
+}
+
+
+#CheckpointButton{
+
+	background:url('./buttons/CheckpointButton.png');
+	
+}
+
+#MovingPlatformButton{
+
+	background:url('./buttons/MovingPlatformButton.png');
+	
+}
+
+#StaticPlatformButton{
+
+	background:url('./buttons/StaticPlatformButton.png');
+	
+}
+
+
+
+.menuButton{
+
+	border:2px solid grey;
+	margin:2px;
+	width:32px;
+	height:32px;
+	border-style:outset;
+	
+}
+
+
+
+
+.menuButton2{
+
+	margin:5px;
+	padding:2px;
+	background-color:black;
+	color:#C9C9C9;
+
+}
+
+.menuButton2:hover{
+
+	
+	color:white;
+
+}
+
+#footer{
+
+
+
+	padding:5px;
+	background-color:#222121;
+	border-left:1px solid black; 
+	border-right:1px solid black; 
+	border-bottom:1px solid black; 
+
+}
+
+#footer a{
+
+	font-size:8pt;
+	text-decoration:none;
+	color:black;
+
+
+}
+
+#footer a:hover{
+
+	color:white;
+}
+
+
+
+
+

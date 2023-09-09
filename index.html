@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Level Editor</title>
+<script src='./Objekte.js' type='text/javascript'></script>
+<script src='./Tools.js' type='text/javascript'></script>
+<script src='./Request.js' type='text/javascript'></script>
+<script src='./LevelEditor.js' type='text/javascript'></script>
+<style type='text/css'>
+@import url('./style.css');
+</style>
+</head>
+<body onload='main();'>
+<div id='container'>
+	
+	<div id='nav1' class='navigation'>
+		<a href='#nav1'>Leveleditor</a>
+		<a href='#'onclick='location="./2DPlatformer.zip"'>Download 2D Platformer</a>
+	</div>
+	<div id='LevelEditorDiv'>
+		<div id='canvasdiv'>
+			<canvas id ='canvas' width ='800' height='600'></canvas>
+		</div>
+		<div id='Menu'>
+			<div id ='Toolmenu'>
+			 <h4>Tools:</h4>
+			 <input class='menuButton' id='PlatzierenButton' title='Objekte im Level platzieren' type='button' name='PlatzierenToolButton' onclick='le.setTool(0);'>
+			  <input class='menuButton' id='VerschiebenButton' title='Objekte neu positionieren und auswählen' type='button' name='VerschiebenToolButton'  onclick='le.setTool(2);'>
+			   <input class='menuButton' id='EntfernenButton' title='Objekt entfernen' type='button' name='EntfernenToolButton'  onclick='le.setTool(1);'>
+			 </div>
+
+			 
+			<div id ='Typemenu'>
+				<h4>Levelobjekte:</h4>
+				<input class='menuButton' id='StaticPlatformButton' type='button' name='staticPlatformButton' title='Unbewegliche Platform' onclick='le.setObjectType("StaticPlatform");'>
+				<input class='menuButton' id='MovingPlatformButton' type='button' name='movingPlatformButton' title='Bewegliche Platform' onclick='le.setObjectType("MovingPlatform");'>
+				<input class='menuButton' id='DeathzoneButton' type='button' name='DeathzoneButton' title='Bei betreten dieser Zone stirbt der Spieler' onclick='le.setObjectType("Deathzone");'>
+				<input class='menuButton' id='CheckpointButton' type='button' name='CheckpointButton' title='Checkpoint' onclick='le.setObjectType("Checkpoint");'>
+				<input class='menuButton' id='PickupButton' type='button' name='PickupButton' title='Punkte zum einsammeln' onclick='le.setObjectType("Pickup");'>
+				<input class='menuButton' id='EndzoneButton' type='button' name='EndzoneButton' title='Bei betreten dieser Zone beendet der Spieler das Level' onclick='le.setObjectType("Endzone");'>
+			</div>
+			
+			<div id='Colorpicker'>
+				<h4>Platform Farbe:</h4>
+				<div class='colorPreview' id='colorPreview1'></div>
+				<p>R:</p><input id='ColorR' type='text' size='3' value='0' onkeyup='le.setSelectedColor()'/> 
+				<p>G:</p><input id='ColorG' type='text' size='3' value='255' onkeyup='le.setSelectedColor()'/> 
+				<p>B:</p><input id='ColorB' type='text' size='3' value='0' onkeyup='le.setSelectedColor()'/> 
+			  
+			</div>	
+
+			<div id ='SelectedObjectMenu'>
+				<h4>Ausgewähltes Levelobjekt</h4>
+				<div>
+					<p id="ObjektTypText">Typ: None</p>
+				</div>
+				<div>
+					<p id='ObjektXText'>X:</p><input id='ObjektXInput' type='text' size='5' value='0' onkeydown=''/> 
+					<p id='ObjektYText'>Y:</p><input id='ObjektYInput' type='text' size='5' value='0' onkeydown=''/>
+				</div>
+				<div>
+					<p id='Objekt-width:'>Width:</p><input id='ObjektWidthInput' type='text' size='5' value='0' onkeydown=''/> 
+					<p id='Objekt-height'>Height:</p><input id='ObjektHeightInput' type='text' size='5' value='0' onkeydown=''/>
+				</div>
+				<div>
+					<p id='Objekt-Velocity'>Platform Speed:</p><input id='PlatformSpeedInput' type='text' size='5' value='0' onkeydown=''/> 
+				</div>
+				<div id='Colorpicker2'>
+					<p>Farbe:</p>
+					<div class='colorPreview' id='colorPreview2'></div>
+					<p>R:</p><input id='sColorR' type='text' size='3' value='0' onkeyup='le.setCurrentlySelectedObjectColor()'/> 
+					<p>G:</p><input id='sColorG' type='text' size='3' value='255' onkeyup='le.setCurrentlySelectedObjectColor()'/> 
+					<p>B:</p><input id='sColorB' type='text' size='3' value='0' onkeyup='le.setCurrentlySelectedObjectColor()'/>
+				</div>
+				<div>
+					<input class='menuButton2' id='SetObjektParameterButton' type='button' name='ObjektParameterButton' value='Set' onclick='le.setCurrentlySelectedObjectParameter()'/>
+				</div>
+			</div>
+			<div id='SaveLevelMenu'>
+				<h4>Level speichern</h4>
+				<p>Level Name:</p>
+				<input id='LevelName' name='LevelName' type='text' size='10' value='MeinLevel'/>
+				<div>
+					<input class='menuButton2' id='saveButton' type='button' name='SaveButton' value='Level erstellen' onclick="saveLevel.sendLevelDataToServer(le.LevelObjekte,document.getElementById('LevelName').value);"/>
+				</div>
+			</div>
+			<div id='DownloadLinkDiv'></div>
+		</div>
+	
+		
+	</div>
+	
+	
+	<div id='footer'>
+		<a href='impressum.html'>Impressum</a>
+	</div>
+	
+</div>
+</body>
+
+</html>
